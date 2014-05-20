@@ -339,6 +339,17 @@ static RKSourceToDesinationKeyTransformationBlock defaultSourceToDestinationKeyT
     [self addPropertyMapping:relationshipMapping];
 }
 
+- (void)addRelationshipMappingWithSourceKeyPath:(NSString *)sourceKeyPath destinationKeyPath: (NSString*)destKeyPath mapping:(RKMapping *)mapping
+{
+    NSParameterAssert(sourceKeyPath);
+    NSParameterAssert(destKeyPath);
+    NSParameterAssert(mapping);
+    
+    RKRelationshipMapping *relationshipMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:sourceKeyPath toKeyPath:destKeyPath withMapping:mapping];
+    [self addPropertyMapping:relationshipMapping];
+}
+
+
 - (void)removePropertyMapping:(RKPropertyMapping *)attributeOrRelationshipMapping
 {
     if ([self.mutablePropertyMappings containsObject:attributeOrRelationshipMapping]) {

@@ -198,6 +198,9 @@
  */
 - (void)addRelationshipMappingWithSourceKeyPath:(NSString *)sourceKeyPath mapping:(RKMapping *)mapping;
 
+- (void)addRelationshipMappingWithSourceKeyPath:(NSString *)sourceKeyPath destinationKeyPath: (NSString*)destKeyPath mapping:(RKMapping *)mapping;
+
+
 ///-------------------------------------
 /// @name Configuring Key Transformation
 ///-------------------------------------
